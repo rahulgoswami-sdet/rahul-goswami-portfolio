@@ -1,0 +1,490 @@
+/* =====================================
+   Rahul Goswami - SDET Portfolio
+   Main Stylesheet (matched to index.html)
+===================================== */
+
+/* 1. Global Reset and Theme */
+:root {
+    --bg: #0b1120;
+    --surface: #111827;
+    --surface-alt: #0f172a;
+    --border: #263247;
+    --text: #e5e7eb;
+    --muted: #cbd5e1;
+    --muted-2: #9ca3af;
+    --accent: #60a5fa;
+    --accent-light: #93c5fd;
+    --accent-strong: #2563eb;
+    --accent-hover: #1d4ed8;
+    --radius: 12px;
+    --content-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-width: 320px;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+a:hover {
+    color: var(--accent-light);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent-light);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+/* 2. Navigation */
+header {
+    background: rgba(17, 24, 39, 0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+nav {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 24px;
+}
+
+nav > a {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    list-style: none;
+}
+
+nav ul a {
+    display: inline-block;
+    color: #d1d5db;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 0;
+}
+
+nav ul a:hover {
+    color: var(--accent);
+}
+
+/* 3. Main Sections */
+main {
+    overflow: clip;
+}
+
+section {
+    padding: 76px max(8%, calc((100% - var(--content-width)) / 2));
+    scroll-margin-top: 85px;
+}
+
+section h2 {
+    color: #fff;
+    font-size: clamp(25px, 3vw, 32px);
+    line-height: 1.25;
+    margin-bottom: 26px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3b82f6;
+    display: inline-block;
+}
+
+section p {
+    margin-bottom: 15px;
+    color: var(--muted);
+}
+
+section p:last-child {
+    margin-bottom: 0;
+}
+
+/* 4. Home / Hero Section */
+#home {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.16), transparent 35%),
+                linear-gradient(135deg, #0b1120 0%, #172554 100%);
+}
+
+#home > p:first-child {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+#home h1 {
+    color: #fff;
+    font-size: clamp(38px, 7vw, 64px);
+    line-height: 1.12;
+    margin: 10px 0;
+    letter-spacing: -1.5px;
+}
+
+#home h2 {
+    color: var(--accent);
+    font-size: clamp(20px, 3vw, 28px);
+    line-height: 1.35;
+    border: 0;
+    margin: 4px 0 18px;
+    padding: 0;
+}
+
+#home p {
+    max-width: 760px;
+}
+
+#home p:not(:first-child) {
+    font-size: 16px;
+}
+
+/* Hero CTA links only; other links remain normal */
+#home > a {
+    display: inline-block;
+    padding: 11px 22px;
+    margin: 12px 10px 0 0;
+    border: 1px solid var(--accent-strong);
+    border-radius: 7px;
+    background: var(--accent-strong);
+    color: #fff;
+    font-weight: 700;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+#home > a + a {
+    background: transparent;
+    border-color: #64748b;
+}
+
+#home > a:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+#home > a + a:hover {
+    background: rgba(96, 165, 250, 0.1);
+    border-color: var(--accent);
+}
+
+/* 5. About Section */
+#about {
+    background: var(--surface);
+}
+
+#about p {
+    max-width: 950px;
+}
+
+/* 6. Skills Section */
+#skills {
+    background: var(--bg);
+}
+
+#skills h3 {
+    color: var(--accent-light);
+    font-size: 18px;
+    margin: 24px 0 8px;
+}
+
+#skills h3:first-of-type {
+    margin-top: 0;
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 10px 0 26px;
+}
+
+#skills li {
+    background: #172554;
+    border: 1px solid #1e40af;
+    color: #bfdbfe;
+    padding: 7px 13px;
+    border-radius: 7px;
+    font-size: 14px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+#skills li:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+/* 7. Experience and Project Cards */
+#experience,
+#projects {
+    background: var(--surface);
+}
+
+article,
+.education-item {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin: 24px 0;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+article:hover,
+.education-item:hover {
+    border-color: #3b82f6;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+article h3,
+.education-item h3 {
+    color: var(--accent-light);
+    font-size: 21px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+article h4,
+.education-item h4 {
+    color: #fff;
+    font-size: 16px;
+    margin: 18px 0 10px;
+}
+
+article p,
+.education-item p {
+    margin-bottom: 12px;
+}
+
+article ul {
+    padding-left: 22px;
+    margin: 12px 0;
+}
+
+article li {
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding-left: 2px;
+}
+
+article li:last-child {
+    margin-bottom: 0;
+}
+
+article strong,
+.education-item strong {
+    color: #fff;
+}
+
+article em {
+    color: var(--muted-2);
+    font-size: 14px;
+}
+
+/* 8. Education */
+#education {
+    background: var(--bg);
+}
+
+.education-item {
+    max-width: 900px;
+    margin-top: 0;
+}
+
+.education-item h4 {
+    margin-top: 0;
+}
+
+/* 9. Contact */
+#contact {
+    background: var(--surface);
+}
+
+#contact p {
+    margin: 16px 0;
+    overflow-wrap: anywhere;
+}
+
+#contact strong {
+    color: #fff;
+}
+
+#contact a {
+    overflow-wrap: anywhere;
+}
+
+/* 10. Footer */
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    background: #070b14;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: var(--muted-2);
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* 11. Responsive Layout */
+@media (max-width: 768px) {
+    header {
+        padding: 14px 5%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 8px 14px;
+    }
+
+    nav ul a {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 54px 6%;
+    }
+
+    #home {
+        min-height: 65vh;
+    }
+
+    #home h1 {
+        letter-spacing: -0.8px;
+    }
+
+    #home p:not(:first-child) {
+        font-size: 15px;
+    }
+
+    article,
+    .education-item {
+        padding: 19px;
+        margin: 18px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    nav > a {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 6px 12px;
+    }
+
+    nav ul a {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 44px 5%;
+    }
+
+    section h2 {
+        margin-bottom: 20px;
+    }
+
+    #home {
+        min-height: auto;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    #home h1 {
+        font-size: clamp(34px, 10vw, 42px);
+    }
+
+    #home h2 {
+        font-size: 20px;
+    }
+
+    #home > a {
+        padding: 10px 14px;
+        margin: 10px 7px 0 0;
+        font-size: 13px;
+    }
+
+    #skills li {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    article,
+    .education-item {
+        padding: 16px;
+    }
+
+    article h3,
+    .education-item h3 {
+        font-size: 19px;
+    }
+}
+
+/* 12. Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
